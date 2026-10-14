@@ -1,0 +1,75 @@
+import type { SkillCategory } from '../types/portfolio';
+
+export const skillsData: SkillCategory[] = [
+  {
+    id: 'frontend',
+    title: 'Frontend & Cross-Platform',
+    shortDesc: 'Architecting scalable component systems, responsive web applications, and native mobile clients.',
+    iconName: 'Layout',
+    skills: [
+      { name: 'React', level: 'core', context: 'Component architecture, custom hooks, performance profiling, SSR/hydration' },
+      { name: 'Next.js', level: 'core', context: 'App router, server components, hybrid rendering, API routes' },
+      { name: 'React Native', level: 'core', context: 'Cross-platform mobile (iOS/Android), gesture systems, offline sync' },
+      { name: 'TypeScript', level: 'core', context: 'Strict typing, generic abstractions, utility types, AST safety' },
+      { name: 'Tailwind CSS', level: 'core', context: 'Design token systems, custom utilities, responsive layouts, JIT' },
+      { name: 'JavaScript (ESNext)', level: 'core', context: 'Modern async paradigms, event loops, DOM performance' },
+      { name: 'Vue.js', level: 'proficient', context: 'Composition API, state management, single-file components' },
+      { name: 'Material UI', level: 'proficient', context: 'Theme customization, component overrides, design system mapping' },
+    ],
+  },
+  {
+    id: 'ai-engineering',
+    title: 'Applied AI & RAG Engineering',
+    shortDesc: 'Productionizing Retrieval-Augmented Generation, vector search, and LLM agent workflows.',
+    iconName: 'Sparkles',
+    skills: [
+      { name: 'Azure OpenAI', level: 'core', context: 'GPT-4 deployment, embedding models, token optimization, prompt engineering' },
+      { name: 'RAG Architecture', level: 'core', context: 'Hybrid search, document chunking, semantic reranking, grounded citation' },
+      { name: 'LangChain', level: 'core', context: 'Prompt templates, document loaders, output parsers, memory persistence' },
+      { name: 'LangGraph', level: 'proficient', context: 'Cyclic state machines, multi-agent workflows, human-in-the-loop nodes' },
+      { name: 'Embeddings & Vector Search', level: 'core', context: 'Vector distance metrics, dimension tuning, semantic indexing' },
+      { name: 'Azure AI Search', level: 'core', context: 'Vector + BM25 hybrid queries, semantic rankers, scoring profiles' },
+      { name: 'Document Processing', level: 'core', context: 'PDF text extraction, layout analysis, markdown preservation' },
+      { name: 'Vector Databases', level: 'proficient', context: 'Tenant partitioning, index maintenance, metadata filtering' },
+    ],
+  },
+  {
+    id: 'backend',
+    title: 'Backend & API Architecture',
+    shortDesc: 'Building robust, asynchronous services with clean contracts and data integrity.',
+    iconName: 'Server',
+    skills: [
+      { name: 'Python', level: 'core', context: 'Modern Python 3, asynchronous workflows, data transformations, typing' },
+      { name: 'FastAPI', level: 'core', context: 'Async endpoints, Pydantic schemas, dependency injection, OpenAPI' },
+      { name: 'Node.js', level: 'core', context: 'Event-driven runtimes, streaming I/O, process management' },
+      { name: 'Express.js', level: 'core', context: 'Middleware pipelines, RESTful routing, error handling strategies' },
+      { name: 'REST APIs', level: 'core', context: 'Resource modeling, contract versioning, idempotency, rate limiting' },
+    ],
+  },
+  {
+    id: 'cloud',
+    title: 'Cloud & Infrastructure',
+    shortDesc: 'Deploying serverless compute, object storage, and secure identity infrastructure.',
+    iconName: 'Cloud',
+    skills: [
+      { name: 'AWS Lambda', level: 'core', context: 'Serverless compute, containerized images, FFmpeg processing layers' },
+      { name: 'Amazon S3', level: 'core', context: 'Pre-signed uploads, event notifications, lifecycle policies' },
+      { name: 'AWS Cognito', level: 'core', context: 'User pools, identity federation, JWT validation, role-based auth' },
+      { name: 'Amazon API Gateway', level: 'proficient', context: 'Request routing, CORS configuration, Lambda proxy integration' },
+      { name: 'Azure Cloud Services', level: 'core', context: 'Azure OpenAI resource management, Azure AI Search, App Services' },
+      { name: 'Docker', level: 'proficient', context: 'Multi-stage builds, containerized local dev, portable deployments' },
+    ],
+  },
+  {
+    id: 'data',
+    title: 'Data & Storage',
+    shortDesc: 'Modeling relational schemas, document collections, and caching layers.',
+    iconName: 'Database',
+    skills: [
+      { name: 'PostgreSQL', level: 'core', context: 'Relational modeling, indexing strategies, transactions, query optimization' },
+      { name: 'MongoDB', level: 'core', context: 'Document design, aggregation pipelines, schema indexing' },
+      { name: 'Firebase', level: 'proficient', context: 'Firestore document store, real-time listeners, security rules' },
+      { name: 'DynamoDB', level: 'proficient', context: 'Key-value partitioning, secondary indexes, single-table design' },
+    ],
+  },
+];
