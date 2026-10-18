@@ -7,7 +7,7 @@ import ProjectDetail from "./pages/ProjectDetail";
 
 function App() {
   return (
-    <Router basename="/portfolio-v5">
+    <Router>
       <ScrollToTop />
       <ScrollToHash />
       <Routes>
