@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  ArrowUpRight, 
-  Menu, 
+import {
+  ArrowUpRight,
+  Menu,
   X
 } from 'lucide-react';
 import { personalConfig } from '../data/config';
@@ -42,11 +42,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-[#0a0b0e]/85 backdrop-blur-md border-b border-white/10 py-3.5 shadow-2xl shadow-black/50'
-            : 'bg-transparent py-5'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled
+          ? 'bg-[#0a0b0e]/85 backdrop-blur-md border-b border-white/10 py-3.5 shadow-2xl shadow-black/50'
+          : 'bg-transparent py-5'
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo / Monogram */}
@@ -65,13 +64,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                 <span className="font-semibold text-sm tracking-tight text-white group-hover:text-[#ccff00] transition-colors">
                   {personalConfig.name}
                 </span>
-                <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono tracking-wide bg-white/5 border border-white/10 text-neutral-300">
-                  Tech Lead
-                </span>
               </div>
-              <p className="text-[11px] text-neutral-400 font-mono tracking-normal hidden sm:block">
-                Nyx Wolves • Chennai
-              </p>
+
             </div>
           </a>
 
@@ -122,7 +116,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div 
+        <div
           className="fixed inset-0 z-50 lg:hidden bg-black/80 backdrop-blur-xl flex flex-col justify-between p-6 animate-fadeIn"
           role="dialog"
           aria-modal="true"
@@ -134,7 +128,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
               </div>
               <div>
                 <p className="font-semibold text-sm text-white">{personalConfig.name}</p>
-                <p className="text-xs text-neutral-400 font-mono">Technical Lead Engineer</p>
+                <p className="text-xs text-neutral-400 font-mono">Senior Full Stack Engineer - AI Engineer</p>
               </div>
             </div>
             <button

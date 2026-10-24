@@ -57,7 +57,7 @@ export const engineeringPillars: EngineeringPillar[] = [
     title: 'Iterative Development & Continuous Feedback',
     summary: 'Decompose ambitious initiatives into verifiable milestones and observable deployments.',
     detailedExplanation:
-      'Software thrives on rapid feedback loops. As a technical lead, I structure projects into decoupled releases, clear testing checkpoints, and automated build verification so teams deliver incremental value with high confidence.',
+      'Software thrives on rapid feedback loops. As a Senior Full Stack Engineer - AI, I structure projects into decoupled releases, clear testing checkpoints, and automated build verification so teams deliver incremental value with high confidence.',
     technicalPattern: 'Continuous integration / Feature gates / Atomic git milestones',
     iconName: 'GitBranch',
   },

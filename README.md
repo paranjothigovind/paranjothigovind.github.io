@@ -1,6 +1,6 @@
 # Paranjothi Govind — Personal Developer Portfolio
 
-> **Production-grade personal portfolio website for Paranjothi Govind**, Technical Lead Engineer at Nyx Wolves (Chennai, India). Built with React 19, TypeScript, Tailwind CSS v4, and Lucide icons.
+> **Production-grade personal portfolio website for Paranjothi Govind**, Senior Full Stack Engineer - AI Engineer at Nyx Wolves (Chennai, India). Built with React 19, TypeScript, Tailwind CSS v4, and Lucide icons.
 
 ---
 
@@ -39,7 +39,7 @@
    - Master-detail interactive layout detailing Paranjothi's engineering philosophy: *Architecture Before Complexity*, *Reusable Components*, *Performance & Maintainability*, *Thoughtful API Contracts*, *Secure Integrations*, *Iterative Feedback*, and *Practical Application of AI*.
 
 7. **Authentic Career Experience Timeline**:
-   - Professional role: Technical Lead Engineer at Nyx Wolves (Chennai, India).
+   - Professional role: Senior Full Stack Engineer - AI Engineer at Nyx Wolves (Chennai, India).
    - Fully data-driven, easily extensible without modifying UI templates.
 
 8. **Working Contact & Live Chennai Clock**:

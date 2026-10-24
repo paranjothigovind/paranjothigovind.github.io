@@ -1,10 +1,10 @@
 import React from 'react';
-import { 
-  Layers, 
-  Smartphone, 
-  Cloud, 
-  Sparkles, 
-  Gauge, 
+import {
+  Layers,
+  Smartphone,
+  Cloud,
+  Sparkles,
+  Gauge,
   Quote,
   Building,
   MapPin
@@ -63,7 +63,7 @@ export const About: React.FC = () => {
                 {personalConfig.aboutIntro}
               </p>
               <p className="text-neutral-400 text-base">
-                As Technical Lead at Nyx Wolves, I treat technical architecture as the backbone of great product experiences. Rather than writing isolated interface widgets or fragile glue code, I focus on the entire data pipeline: from strictly-typed frontend state machines to cloud microservices and vector indices.
+                As Senior Full Stack Engineer - AI at StellarMind, I treat technical architecture as the backbone of great product experiences. Rather than writing isolated interface widgets or fragile glue code, I focus on the entire data pipeline: from strictly-typed frontend state machines to cloud microservices and vector indices.
               </p>
             </div>
 
@@ -79,7 +79,7 @@ export const About: React.FC = () => {
               </p>
               <div className="mt-4 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-neutral-400">
                 <span>Paranjothi Govind</span>
-                <span>Technical Lead</span>
+                <span>Senior Full Stack Engineer - AI</span>
               </div>
             </div>
 
@@ -90,8 +90,8 @@ export const About: React.FC = () => {
                   <Building className="w-3.5 h-3.5 text-[#ccff00]" />
                   <span>Current Role</span>
                 </div>
-                <p className="font-semibold text-sm text-white">Technical Lead</p>
-                <p className="text-xs text-neutral-400">Nyx Wolves</p>
+                <p className="font-semibold text-sm text-white">Senior Full Stack Engineer - AI</p>
+                <p className="text-xs text-neutral-400">StellarMind</p>
               </div>
 
               <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">

@@ -3,8 +3,8 @@ import type { ExperienceItem } from '../types/portfolio';
 export const experienceData: ExperienceItem[] = [
   {
     id: 'nyx-wolves-tech-lead',
-    role: 'Technical Lead Engineer',
-    company: 'Nyx Wolves',
+    role: 'Senior Full Stack Engineer - AI',
+    company: 'StellarMind',
     location: 'Chennai, Tamil Nadu, India',
     period: 'Present',
     current: true,

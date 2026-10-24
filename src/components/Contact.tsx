@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { 
-  Mail, 
-  Copy, 
-  Check, 
-  FileText, 
-  Send, 
-  ArrowUpRight, 
-  Sparkles, 
-  MapPin, 
+import {
+  Mail,
+  Copy,
+  Check,
+  FileText,
+  Send,
+  ArrowUpRight,
+  Sparkles,
+  MapPin,
   AlertCircle
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './BrandIcons';
@@ -80,7 +80,7 @@ export const Contact: React.FC = () => {
             Have an interesting problem? Let's build something meaningful.
           </h2>
           <p className="text-neutral-400 text-sm sm:text-base max-w-xl">
-            Available for technical leadership discussions, applied AI / RAG architecture consultations, and select product advisory.
+            Available for Senior Full Stack Engineer - AIership discussions, applied AI / RAG architecture consultations, and select product advisory.
           </p>
         </div>
 
@@ -237,7 +237,7 @@ export const Contact: React.FC = () => {
                     type="text"
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
-                    placeholder="e.g. Technical Leadership / Applied AI Architecture Advisory"
+                    placeholder="e.g. Senior Full Stack Engineer - AIership / Applied AI Architecture Advisory"
                     required
                     className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-white text-xs sm:text-sm placeholder-neutral-500 focus:outline-none focus:border-[#ccff00] focus:ring-1 focus:ring-[#ccff00] transition-colors"
                   />

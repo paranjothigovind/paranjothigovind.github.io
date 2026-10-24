@@ -40,7 +40,7 @@ export const Footer: React.FC = () => {
             <div>
               <p className="font-semibold text-sm text-white">{personalConfig.name}</p>
               <p className="text-xs text-neutral-400 font-mono">
-                Technical Lead Engineer • {personalConfig.company}
+                Senior Full Stack Engineer - AI Engineer • {personalConfig.company}
               </p>
             </div>
           </div>
