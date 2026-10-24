@@ -20,7 +20,7 @@ export const Experience: React.FC = () => {
             Professional Experience
           </h2>
           <p className="text-neutral-400 text-sm sm:text-base max-w-2xl">
-            Senior Full Stack Engineer - AIership track record across product architecture, engineering mentorship, high-stakes system integration, and production delivery.
+            Senior Full Stack Engineer - AI leadership track record across product architecture, engineering mentorship, high-stakes system integration, and production delivery.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ export const Experience: React.FC = () => {
               {/* Responsibilities & Achievements */}
               <div className="space-y-3 pb-6">
                 <h4 className="text-xs font-mono text-neutral-400 uppercase tracking-wider">
-                  Key Senior Full Stack Engineer - AIership Responsibilities:
+                  Key Senior Full Stack Engineer - AI Responsibilities:
                 </h4>
                 <div className="space-y-2">
                   {item.responsibilities.map((resp, idx) => (

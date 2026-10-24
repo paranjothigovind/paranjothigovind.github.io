@@ -6,7 +6,7 @@ export const personalConfig: PersonalConfig = {
   company: 'StellarMind',
   companyUrl: '#',
   location: 'Chennai, Tamil Nadu, India',
-  statusText: 'Available for Senior Full Stack Engineer - AIership & select architectural advisory',
+  statusText: 'Available for Senior Full Stack Engineer - AI leadership & select architectural advisory',
   statusAvailable: true,
   heroHeadline: 'I build digital products, scalable interfaces, and AI-powered experiences.',
   heroSubheadline:
