@@ -1,0 +1,17 @@
+{
+  "name": "Paranjothi Govind — Software Engineer & Technical Lead",
+  "short_name": "Paranjothi Govind",
+  "description": "Software engineer and Technical Lead building digital products, scalable interfaces, and AI-powered experiences across frontend, full-stack, cloud, and applied AI.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0A0A0A",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
