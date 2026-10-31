@@ -7,14 +7,16 @@ export const profile = {
   company: "Nyx Wolves",
   location: "Chennai, Tamil Nadu, India",
   status: "Available for select engagements",
-  headline: "I build digital products, scalable interfaces, and AI-powered experiences.",
+  headline:
+    "I build digital products, scalable interfaces, and AI-powered experiences.",
   intro:
     "I'm a software engineer and technical lead working across frontend systems, cross-platform applications, cloud infrastructure, and applied AI. From architecture and implementation to deployment, I take products end-to-end — building reusable, maintainable systems that hold up under real use.",
   email: "paranjothigovind@gmail.com", // ← replace with your real email
   links: {
     linkedin: "https://www.linkedin.com/in/paranjothigovind", // ← replace
     github: "https://github.com/paranjothigovind", // ← replace
-    resume: "https://thirdeyebucket.blob.core.windows.net/thirdeyebucket/Resume%20-%20Paranjothi%20G%20-%20Updated%20(1).docx.pdf?sp=r&st=2026-10-16T17:32:21Z&se=2026-10-17T01:47:21Z&spr=https&sv=2026-02-06&sr=b&sig=8704nx28KFDVxuz3Si80Tz8Tb%2Fo8PeG3R%2BzaX%2FEBP58%3D", // ← add a public resume URL when available
+    resume:
+      "https://thirdeyebucket.blob.core.windows.net/thirdeyebucket/Resume%20-%20Paranjothi%20G%20-%20Updated%20(1).docx.pdf?sp=r&st=2026-10-16T17:32:21Z&se=2026-10-17T01:47:21Z&spr=https&sv=2026-02-06&sr=b&sig=8704nx28KFDVxuz3Si80Tz8Tb%2Fo8PeG3R%2BzaX%2FEBP58%3D", // ← add a public resume URL when available
   },
 };
 
@@ -109,27 +111,37 @@ export const experience = [
       "Integrate cloud services and applied-AI pipelines into product features.",
       "Mentor engineers and raise the bar on code quality and review.",
     ],
-  },{
+  },
+  {
     role: "Software Engineer",
     company: "Red Chariots Pvt. Ltd",
     period: "2020",
-    summary: "Building an interactive quizzes and games to teach the driving skills to trainers",
+    summary:
+      "Building an interactive quizzes and games to teach the driving skills to trainers",
     points: [
       "Led creation of custom ionic-react framework applications from scratch, collaborating closely with stakeholders to ensure alignment with client needs and business objectives.",
       "Worked closely with stakeholders to gather requirements and provide technical insights, fostering strong client relationships and transparent communication throughout the development process.",
-      "Developed scalable, performant full-stack applications using Ionic, React.js, and Firestore, living quiz games to train users."
-    ]
-  }
+      "Developed scalable, performant full-stack applications using Ionic, React.js, and Firestore, living quiz games to train users.",
+    ],
+  },
   // Add previous positions here as { role, company, period, location, summary, points: [] }
 ];
 
 export const projects = [
   {
     slug: "third-eye-meditation-ai",
-    title: "Third Eye Meditation AI",
+    title: "Meditation Assistant AI",
     category: "Applied AI / RAG / Cloud Engineering",
-    tech: ["Python", "FastAPI", "LangChain", "LangGraph", "Azure OpenAI", "Azure AI Search"],
-    tagline: "An AI meditation assistant that answers from course materials and knowledge sources.",
+    tech: [
+      "Python",
+      "FastAPI",
+      "LangChain",
+      "LangGraph",
+      "Azure OpenAI",
+      "Azure AI Search",
+    ],
+    tagline:
+      "An AI meditation assistant that answers from course materials and knowledge sources.",
     overview:
       "Third Eye is an AI-powered meditation assistant designed to answer questions using relevant course materials and curated knowledge sources, rather than a general-purpose model's memory. It turns a corpus of meditation content into a grounded, queryable knowledge base.",
     problem:
@@ -150,7 +162,14 @@ export const projects = [
       "Balancing chunk size against retrieval precision and context window cost.",
       "Designing the agent graph so new specialized agents slot in cleanly.",
     ],
-    stack: ["Python", "FastAPI", "LangChain", "LangGraph", "Azure OpenAI", "Azure AI Search"],
+    stack: [
+      "Python",
+      "FastAPI",
+      "LangChain",
+      "LangGraph",
+      "Azure OpenAI",
+      "Azure AI Search",
+    ],
     status: {
       implemented: [
         "Document ingestion and processing",
@@ -171,7 +190,8 @@ export const projects = [
     title: "AI-Powered Document Portal",
     category: "Applied AI / Document Intelligence",
     tech: ["Azure OpenAI", "LangChain", "Vector Databases", "RAG"],
-    tagline: "Upload a PDF, ask natural-language questions, get answers grounded in the document.",
+    tagline:
+      "Upload a PDF, ask natural-language questions, get answers grounded in the document.",
     overview:
       "A document question-answering application. Users upload PDF documents and ask natural-language questions about their contents; the system parses, indexes, and retrieves relevant passages to generate answers grounded in the source.",
     problem:
@@ -193,7 +213,12 @@ export const projects = [
     ],
     stack: ["Azure OpenAI", "LangChain", "Vector Databases", "RAG"],
     status: {
-      implemented: ["PDF parsing", "Embeddings and indexing", "Contextual retrieval", "Grounded answers"],
+      implemented: [
+        "PDF parsing",
+        "Embeddings and indexing",
+        "Contextual retrieval",
+        "Grounded answers",
+      ],
       planned: ["Multi-document cross-search", "Source citation UI"],
     },
     links: { github: "", demo: "", docs: "" },
@@ -203,7 +228,8 @@ export const projects = [
     title: "Property Management",
     category: "Property Technology / Mobile Applications",
     tech: ["React Native"],
-    tagline: "A white-label property management application with reusable, adaptable architecture.",
+    tagline:
+      "A white-label property management application with reusable, adaptable architecture.",
     overview:
       "GoAtar is a white-label property management application built for reuse across property brands. The emphasis is on a shared, adaptable architecture that can be re-skinned and re-configured without rebuilding the product.",
     problem:
@@ -218,10 +244,15 @@ export const projects = [
       "Shared core with brand-specific configuration layers.",
       "Reusable component and screen abstractions across properties.",
     ],
-    challenges: ["Keeping the shared core stable while each brand diverges in features."],
+    challenges: [
+      "Keeping the shared core stable while each brand diverges in features.",
+    ],
     stack: ["React Native"],
     status: {
-      implemented: ["Cross-platform mobile app", "Reusable screen architecture"],
+      implemented: [
+        "Cross-platform mobile app",
+        "Reusable screen architecture",
+      ],
       planned: ["Additional white-label configurations"],
     },
     links: { github: "", demo: "", docs: "" },
@@ -231,10 +262,12 @@ export const projects = [
     title: "Logistic Service app",
     category: "Transportation / Mobile Applications",
     tech: ["React Native", "REST APIs"],
-    tagline: "An intercity transport booking application with end-to-end booking journeys.",
+    tagline:
+      "An intercity transport booking application with end-to-end booking journeys.",
     overview:
       "RoadFerry is an intercity transport booking application. The focus is on mobile booking journeys — search, selection, and confirmation — backed by API integration for routes, schedules, and availability.",
-    problem: "Intercity booking needs a smooth mobile flow from search to ticket, with live schedule and availability data.",
+    problem:
+      "Intercity booking needs a smooth mobile flow from search to ticket, with live schedule and availability data.",
     role: "Mobile application development and API integration.",
     architecture: [
       "Booking-oriented mobile user journeys.",
@@ -252,13 +285,15 @@ export const projects = [
   },
   {
     slug: "view-inc",
-    title: "View.Inc",
+    title: "View",
     category: "Smart Buildings / IoT Applications",
     tech: ["React Native", "Connected Systems"],
-    tagline: "Smart glass and building automation, controlled from a mobile interface.",
+    tagline:
+      "Smart glass and building automation, controlled from a mobile interface.",
     overview:
       "View.Inc is a smart glass and building automation application. It sits at the intersection of mobile interfaces, connected systems, and building automation — controlling and monitoring smart-glass and building devices from a phone.",
-    problem: "Building automation and smart-glass control need a mobile interface that bridges device state and user intent.",
+    problem:
+      "Building automation and smart-glass control need a mobile interface that bridges device state and user intent.",
     role: "Mobile interface and connected-systems integration.",
     architecture: [
       "Mobile interface for smart-glass and building devices.",
@@ -266,7 +301,9 @@ export const projects = [
       "Building automation workflows exposed to end users.",
     ],
     decisions: ["Mobile-first control surface for building automation."],
-    challenges: ["Bridging real-time device state with a responsive mobile UI."],
+    challenges: [
+      "Bridging real-time device state with a responsive mobile UI.",
+    ],
     stack: ["React Native", "Connected Systems"],
     status: {
       implemented: ["Mobile control interface", "Device integration"],
@@ -276,13 +313,15 @@ export const projects = [
   },
   {
     slug: "mtds-vending",
-    title: "MTDS Vending Application",
+    title: "COVID-19 Vending Application",
     category: "Mobile Applications / System Integration",
     tech: ["React Native", "Hardware Integration"],
-    tagline: "A React Native app that interfaces with airport vending machines.",
+    tagline:
+      "A React Native app that interfaces with airport vending machines.",
     overview:
       "MTDS is a React Native application that interfaces with airport vending machines. The interesting part is the boundary between a standard mobile app and physical hardware — bridging the application layer to the vending machine systems.",
-    problem: "Airport vending needs a mobile application that talks to the machines — not just a standalone app.",
+    problem:
+      "Airport vending needs a mobile application that talks to the machines — not just a standalone app.",
     role: "React Native application development and hardware-system integration.",
     architecture: [
       "React Native application layer.",
@@ -302,11 +341,21 @@ export const projects = [
     slug: "audio-splitter",
     title: "Audio Splitter",
     category: "Full-Stack Engineering / Media Processing",
-    tech: ["React", "Node.js", "Python", "AWS Lambda", "AWS Cognito", "Tailwind CSS", "FFmpeg"],
-    tagline: "A web interface, backend processing, and cloud services for audio splitting.",
+    tech: [
+      "React",
+      "Node.js",
+      "Python",
+      "AWS Lambda",
+      "AWS Cognito",
+      "Tailwind CSS",
+      "FFmpeg",
+    ],
+    tagline:
+      "A web interface, backend processing, and cloud services for audio splitting.",
     overview:
       "Audio Splitter is a full-stack audio-processing application. A React web interface hands off to backend processing (Node.js and Python) running on AWS Lambda, with auth via Cognito and media handling through FFmpeg.",
-    problem: "Audio processing is compute-heavy and stateful; the web layer should stay light while the heavy work happens serverless.",
+    problem:
+      "Audio processing is compute-heavy and stateful; the web layer should stay light while the heavy work happens serverless.",
     role: "Full-stack implementation across web, backend, and cloud.",
     architecture: [
       "React + Tailwind web interface.",
@@ -315,11 +364,28 @@ export const projects = [
       "AWS Cognito for authentication.",
       "FFmpeg for audio splitting.",
     ],
-    decisions: ["Serverless processing so the web layer stays thin and scales with demand."],
-    challenges: ["Coordinating async processing state between client and Lambda."],
-    stack: ["React", "Node.js", "Python", "AWS Lambda", "AWS Cognito", "Tailwind CSS", "FFmpeg"],
+    decisions: [
+      "Serverless processing so the web layer stays thin and scales with demand.",
+    ],
+    challenges: [
+      "Coordinating async processing state between client and Lambda.",
+    ],
+    stack: [
+      "React",
+      "Node.js",
+      "Python",
+      "AWS Lambda",
+      "AWS Cognito",
+      "Tailwind CSS",
+      "FFmpeg",
+    ],
     status: {
-      implemented: ["Web interface", "Backend processing", "Serverless media pipeline", "Auth"],
+      implemented: [
+        "Web interface",
+        "Backend processing",
+        "Serverless media pipeline",
+        "Auth",
+      ],
       planned: [],
     },
     links: { github: "", demo: "", docs: "" },
@@ -332,14 +398,17 @@ export const projects = [
     tagline: "A reusable component library maintained as @vouch/library.",
     overview:
       "A reusable React + TypeScript component library published and maintained as @vouch/library. The focus is consistency, reusability, clean component APIs, and long-term maintainability across product teams.",
-    problem: "Product teams rebuild the same components with subtle differences. A shared library standardizes the primitives and the conventions around them.",
+    problem:
+      "Product teams rebuild the same components with subtle differences. A shared library standardizes the primitives and the conventions around them.",
     role: "Library architecture, component APIs, and maintenance.",
     architecture: [
       "Typed, composable React component primitives.",
       "Consistent component APIs and prop conventions.",
       "Build and packaging for npm consumption.",
     ],
-    decisions: ["Small, composable primitives over large opinionated components."],
+    decisions: [
+      "Small, composable primitives over large opinionated components.",
+    ],
     challenges: ["Keeping the API surface stable while the product evolves."],
     stack: ["React", "TypeScript"],
     status: {
