@@ -1,34 +1,50 @@
-import Reveal from "./Reveal";
 import ProjectCard from "./ProjectCard";
 import { projects } from "@/lib/portfolioData";
 
+const FEATURED = ["third-eye-meditation-ai", "insureflow", "ai-document-portal"];
+const PAIR = ["goatar", "roadferry"];
+
+const pick = (slugs) => slugs.map((s) => projects.find((p) => p.slug === s)).filter(Boolean);
+
 export default function Projects() {
+  const featured = pick(FEATURED);
+  const pair = pick(PAIR);
+  const shown = new Set([...FEATURED, ...PAIR]);
+  const rest = projects.filter((p) => !shown.has(p.slug));
+
   return (
-    <section id="work" className="py-24 sm:py-32 border-t border-border">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
-          <Reveal>
-            <div>
-              <div className="font-mono-label text-accent mb-4">02 / Selected Work</div>
-              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight max-w-2xl">
-                Products, systems, and AI work — built end to end.
-              </h2>
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="text-muted-foreground max-w-sm">
-              Each project opens to a full case study: context, architecture, decisions, and stack.
-            </p>
-          </Reveal>
+    <section id="work" className="section">
+      <div className="container">
+        <div className="work__top">
+          <h2>Products, systems, and AI work — built end to end.</h2>
+          <p>Each project opens to a full case study: context, architecture, decisions, and stack.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-px bg-border">
-          {projects.map((p, i) => (
-            <div key={p.slug} className="bg-background">
-              <ProjectCard project={p} index={i} />
+        {featured.map((p, i) => (
+          <ProjectCard key={p.slug} project={p} index={i} variant={i === 0 ? "lead" : "feature"} />
+        ))}
+
+        {pair.length > 0 && (
+          <>
+            <h3 className="pair__title">
+              Product engineering
+            </h3>
+            <div className="pair">
+              {pair.map((p, i) => (
+                <ProjectCard key={p.slug} project={p} index={featured.length + i} variant="pair" />
+              ))}
             </div>
-          ))}
-        </div>
+          </>
+        )}
+
+        {rest.length > 0 && (
+          <div className="more">
+            <h3 className="more__title">More work</h3>
+            {rest.map((p) => (
+              <ProjectCard key={p.slug} project={p} index={0} variant="row" />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

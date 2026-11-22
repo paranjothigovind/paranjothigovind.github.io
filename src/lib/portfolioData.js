@@ -20,6 +20,14 @@ export const profile = {
   },
 };
 
+// The four disciplines, each with the technologies already listed under skillGroups.
+export const disciplines = [
+  { name: "Frontend engineering", tech: ["React", "Next.js", "React Native", "TypeScript"] },
+  { name: "Full-stack product development", tech: ["React", "Node.js"] },
+  { name: "AI engineering and agentic workflows", tech: ["Azure OpenAI", "LangChain", "LangGraph", "RAG"] },
+  { name: "Backend architecture and cloud infrastructure", tech: ["Python", "FastAPI", "AWS Lambda", "PostgreSQL"] },
+];
+
 export const techStrip = [
   "React",
   "Next.js",
@@ -170,6 +178,61 @@ export const projects = [
       "Azure OpenAI",
       "Azure AI Search",
     ],
+    // Real captures of the running ThirdEye chat UI (Next.js frontend), taken locally.
+    screenshots: [
+      {
+        src: "/projects/third-eye-chat-desktop.webp",
+        alt: "ThirdEye chat on desktop: a welcome screen with four suggested questions and a message box.",
+        caption: "The chat interface, desktop.",
+        width: 1440,
+        height: 900,
+      },
+      {
+        src: "/projects/third-eye-chat-mobile.webp",
+        alt: "ThirdEye chat on a phone: the welcome screen with suggested questions above the message box.",
+        caption: "The same chat on a phone.",
+        width: 390,
+        height: 844,
+      },
+      {
+        src: "/projects/third-eye-landing.webp",
+        alt: "The ThirdEye landing page, set in Tamil, with a seated meditation figure.",
+        caption: "The landing page, in Tamil.",
+        width: 1440,
+        height: 760,
+      },
+    ],
+    // From the backend's ARCHITECTURE.md.
+    workflows: [
+      {
+        title: "How a question is answered",
+        steps: [
+          "The query is checked for medical-advice and emergency wording, then rewritten for better retrieval.",
+          "Hybrid search over Azure AI Search combines vector and keyword (BM25) results.",
+          "Context is assembled in layers: canonical teachings, safety and contraindications, practices, then Q&A exemplars.",
+          "Azure OpenAI generates the answer from that context.",
+          "Citations are extracted and the response is validated before any text is streamed back.",
+        ],
+      },
+      {
+        title: "How the agent loops",
+        steps: [
+          "LangGraph holds the conversation state across turns.",
+          "Query rewriting, retrieval, generation and citation extraction are separate graph nodes.",
+          "A quality check after retrieval and generation can send the run back for another attempt.",
+        ],
+      },
+      {
+        title: "How content gets in",
+        steps: [
+          "PDFs and web pages are fetched; web fetching respects robots.txt and is rate-limited.",
+          "Text is parsed, cleaned and chunked.",
+          "Chunks are embedded and upserted into the Azure AI Search index, versioned with an is_latest flag.",
+          "Celery workers run ingestion as background jobs, tracked through Redis.",
+        ],
+      },
+    ],
+    supporting: ["Celery", "Redis", "Azure Blob Storage", "Azure Key Vault"],
     status: {
       implemented: [
         "Document ingestion and processing",
@@ -183,6 +246,30 @@ export const projects = [
         "Broader agent orchestration across multiple course domains",
       ],
     },
+    links: { github: "", demo: "", docs: "" },
+  },
+  {
+    // Only the facts supplied by the owner. Fill the empty fields to expand this case study.
+    slug: "insureflow",
+    title: "InsureFlow",
+    category: "Backend Architecture",
+    tech: ["NestJS", "Prisma", "PostgreSQL"],
+    tagline: "Backend architecture built on NestJS, Prisma and PostgreSQL.",
+    overview: "",
+    problem: "",
+    role: "",
+    architecture: [],
+    decisions: [],
+    challenges: [],
+    stack: ["NestJS", "Prisma", "PostgreSQL"],
+    layers: [
+      { layer: "Framework", name: "NestJS" },
+      { layer: "ORM", name: "Prisma" },
+      { layer: "Database", name: "PostgreSQL" },
+    ],
+    screenshots: [],
+    workflows: [],
+    status: { implemented: [], planned: [] },
     links: { github: "", demo: "", docs: "" },
   },
   {

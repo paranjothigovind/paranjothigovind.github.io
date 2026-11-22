@@ -1,10 +1,10 @@
 
 import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, ArrowUpRight, Github, ExternalLink, BookOpen, CheckCircle2, Circle } from "lucide-react";
-import { projects, profile } from "@/lib/portfolioData";
-import Reveal from "@/components/Reveal";
+import { Github, ExternalLink, BookOpen, CheckCircle2, Circle } from "lucide-react";
+import { projects } from "@/lib/portfolioData";
 import Navbar from "@/components/Navbar";
+import { Flow } from "@/components/ProjectCard";
 import Footer from "@/components/Footer";
 
 export default function ProjectDetail() {
@@ -17,16 +17,14 @@ export default function ProjectDetail() {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-background flex flex-col">
+      <div className="min-h-screen">
         <Navbar />
-        <main className="flex-1 flex items-center justify-center px-5">
-          <div className="text-center">
-            <p className="font-mono-label text-accent mb-4">404</p>
-            <h1 className="font-heading text-3xl font-semibold mb-6">Project not found.</h1>
-            <Link to="/" className="font-mono-label text-foreground border border-border px-5 py-3 hover:border-accent hover:text-accent transition-colors">
-              ← Back home
-            </Link>
-          </div>
+        <main className="container notfound">
+          <p className="label">404</p>
+          <h1>Project not found.</h1>
+          <Link to="/" className="btn">
+            Back home
+          </Link>
         </main>
       </div>
     );
@@ -38,137 +36,155 @@ export default function ProjectDetail() {
     { key: "docs", label: "Docs", icon: BookOpen, href: project.links.docs },
   ].filter((l) => l.href);
 
+  const list = (items) => (
+    <ul className="pipeline">
+      {items.map((item, i) => (
+        <li key={i}>
+          <span className="pipeline__n" aria-hidden="true">
+            {i + 1}
+          </span>
+          <span className="pipeline__t">{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+
+  const hasStatus = project.status.implemented.length > 0 || project.status.planned.length > 0;
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Navbar />
-      <main className="pt-16">
-        <article className="mx-auto max-w-7xl px-5 sm:px-8 py-16 sm:py-24">
-          <Link
-            to="/"
-            className="group inline-flex items-center gap-2 font-mono-label text-muted-foreground hover:text-foreground transition-colors mb-12"
-          >
-            <ArrowLeft size={14} className="group-hover:-translate-x-0.5 transition-transform" />
+      <main>
+        <article className="container page">
+          <Link to="/" className="page__back link">
             All work
           </Link>
 
-          <Reveal>
-            <div className="font-mono-label text-accent mb-4">{project.category}</div>
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05] text-balance">
-              {project.title}
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-              {project.tagline}
-            </p>
-          </Reveal>
+          <span className="label" style={{ display: "block", marginBottom: "var(--space-md)" }}>
+            {project.category}
+          </span>
+          <h1>{project.title}</h1>
+          <p className="lead page__tagline">{project.tagline}</p>
 
-          <Reveal delay={0.1}>
-            <div className="mt-10 flex flex-wrap gap-2">
-              {project.tech.map((t) => (
-                <span key={t} className="font-mono text-[11px] px-2.5 py-1 border border-border text-muted-foreground">
-                  {t}
-                </span>
-              ))}
-            </div>
-          </Reveal>
+          <div className="chips" style={{ marginTop: "var(--space-lg)" }}>
+            {project.tech.map((t) => (
+              <span key={t} className="chip">
+                {t}
+              </span>
+            ))}
+          </div>
 
           {linkItems.length > 0 && (
-            <Reveal delay={0.15}>
-              <div className="mt-8 flex flex-wrap gap-3">
-                {linkItems.map((l) => (
-                  <a
-                    key={l.key}
-                    href={l.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group inline-flex items-center gap-2 border border-border px-4 py-2 font-mono-label text-foreground hover:border-accent hover:text-accent transition-colors"
-                  >
-                    <l.icon size={14} />
-                    {l.label}
-                    <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </a>
-                ))}
-              </div>
-            </Reveal>
+            <div className="page__links">
+              {linkItems.map((l) => (
+                <a key={l.key} href={l.href} target="_blank" rel="noreferrer" className="btn">
+                  <l.icon size={14} aria-hidden="true" />
+                  {l.label}
+                </a>
+              ))}
+            </div>
           )}
 
-          <div className="mt-16 grid lg:grid-cols-12 gap-10">
-            <div className="lg:col-span-8 space-y-14">
-              <Section title="Overview">
-                <p className="text-muted-foreground leading-relaxed">{project.overview}</p>
-              </Section>
-              <Section title="Problem & Context">
-                <p className="text-muted-foreground leading-relaxed">{project.problem}</p>
-              </Section>
-              <Section title="My Role">
-                <p className="text-muted-foreground leading-relaxed">{project.role}</p>
-              </Section>
-              <Section title="Technical Architecture">
-                <ul className="space-y-3">
-                  {project.architecture.map((a, i) => (
-                    <li key={i} className="flex gap-3 text-muted-foreground">
-                      <span className="text-accent shrink-0 mt-1.5 h-1.5 w-1.5 rounded-full bg-accent" />
-                      {a}
-                    </li>
-                  ))}
-                </ul>
-              </Section>
-              <Section title="Key Engineering Decisions">
-                <ul className="space-y-3">
-                  {project.decisions.map((d, i) => (
-                    <li key={i} className="flex gap-3 text-muted-foreground">
-                      <span className="text-accent shrink-0 mt-1.5 h-1.5 w-1.5 rounded-full bg-accent" />
-                      {d}
-                    </li>
-                  ))}
-                </ul>
-              </Section>
-              <Section title="Challenges & Solutions">
-                <ul className="space-y-3">
-                  {project.challenges.map((c, i) => (
-                    <li key={i} className="flex gap-3 text-muted-foreground">
-                      <span className="text-accent shrink-0 mt-1.5 h-1.5 w-1.5 rounded-full bg-accent" />
-                      {c}
-                    </li>
-                  ))}
-                </ul>
-              </Section>
+          {project.screenshots && project.screenshots.length > 0 && (
+            <div className="gallery">
+              {project.screenshots.map((sh, i) => (
+                <figure key={sh.src} className={`shot ${i === 0 ? "shot--wide" : "shot--narrow"}`}>
+                  <img src={sh.src} alt={sh.alt} width={sh.width} height={sh.height} loading={i === 0 ? "eager" : "lazy"} />
+                  <figcaption className="label">{sh.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          )}
+
+          <div className="page__grid">
+            <div className="page__body">
+              {project.overview && (
+                <Section title="Overview">
+                  <p>{project.overview}</p>
+                </Section>
+              )}
+              {project.problem && (
+                <Section title="Problem & Context">
+                  <p>{project.problem}</p>
+                </Section>
+              )}
+              {project.role && (
+                <Section title="My Role">
+                  <p>{project.role}</p>
+                </Section>
+              )}
+              {project.architecture.length > 0 && (
+                <Section title="Technical Architecture">{list(project.architecture)}</Section>
+              )}
+              {project.layers && project.layers.length > 0 && (
+                <Section title="Stack, by layer">
+                  <Flow items={project.layers} label="Stack by layer" />
+                </Section>
+              )}
+              {(project.workflows || []).map((w) => (
+                <Section key={w.title} title={w.title}>
+                  {list(w.steps)}
+                </Section>
+              ))}
+              {project.decisions.length > 0 && (
+                <Section title="Key Engineering Decisions">{list(project.decisions)}</Section>
+              )}
+              {project.challenges.length > 0 && (
+                <Section title="Challenges & Solutions">{list(project.challenges)}</Section>
+              )}
             </div>
 
-            <aside className="lg:col-span-4 space-y-8 lg:sticky lg:top-24 self-start">
-              <div className="border border-border p-6">
-                <div className="font-mono-label text-muted-foreground mb-4">Status</div>
-                <div className="mb-5">
-                  <div className="flex items-center gap-2 mb-3 text-sm text-foreground">
-                    <CheckCircle2 size={15} className="text-accent" /> Implemented
-                  </div>
-                  <ul className="space-y-1.5 pl-7">
-                    {project.status.implemented.map((s, i) => (
-                      <li key={i} className="text-sm text-muted-foreground">{s}</li>
-                    ))}
-                  </ul>
-                </div>
-                {project.status.planned.length > 0 && (
-                  <div>
-                    <div className="flex items-center gap-2 mb-3 text-sm text-foreground">
-                      <Circle size={15} className="text-muted-foreground" /> Planned
+            <aside className="page__aside">
+              {hasStatus && (
+                <div className="well">
+                  <h3>Status</h3>
+                  {project.status.implemented.length > 0 && (
+                    <div style={{ marginBottom: "var(--space-md)" }}>
+                      <p className="state" style={{ display: "flex", alignItems: "center", gap: "var(--space-xs)" }}>
+                        <CheckCircle2 size={15} aria-hidden="true" /> Implemented
+                      </p>
+                      <ul>
+                        {project.status.implemented.map((s, i) => (
+                          <li key={i}>{s}</li>
+                        ))}
+                      </ul>
                     </div>
-                    <ul className="space-y-1.5 pl-7">
-                      {project.status.planned.map((s, i) => (
-                        <li key={i} className="text-sm text-muted-foreground">{s}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-              <div className="border border-border p-6">
-                <div className="font-mono-label text-muted-foreground mb-4">Stack</div>
-                <div className="flex flex-wrap gap-2">
+                  )}
+                  {project.status.planned.length > 0 && (
+                    <div>
+                      <p className="state" style={{ display: "flex", alignItems: "center", gap: "var(--space-xs)" }}>
+                        <Circle size={15} aria-hidden="true" /> Planned
+                      </p>
+                      <ul>
+                        {project.status.planned.map((s, i) => (
+                          <li key={i}>{s}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              )}
+              <div className="well">
+                <h3>Stack</h3>
+                <div className="chips">
                   {project.stack.map((s) => (
-                    <span key={s} className="font-mono text-[11px] px-2.5 py-1 border border-border text-muted-foreground">
+                    <span key={s} className="chip">
                       {s}
                     </span>
                   ))}
                 </div>
+                {project.supporting && project.supporting.length > 0 && (
+                  <>
+                    <h3 style={{ marginTop: "var(--space-lg)" }}>Also in the system</h3>
+                    <div className="chips">
+                      {project.supporting.map((s) => (
+                        <span key={s} className="chip">
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
             </aside>
           </div>
@@ -181,11 +197,9 @@ export default function ProjectDetail() {
 
 function Section({ title, children }) {
   return (
-    <Reveal>
-      <section>
-        <h2 className="font-mono-label text-accent mb-4">{title}</h2>
-        <div className="space-y-3">{children}</div>
-      </section>
-    </Reveal>
+    <section className="page__section">
+      <h2>{title}</h2>
+      <div style={{ display: "grid", gap: "var(--space-sm)" }}>{children}</div>
+    </section>
   );
 }

@@ -1,23 +1,5 @@
-import { motion } from "framer-motion";
-import { useReducedMotion } from "framer-motion";
-
-export default function Reveal({ children, delay = 0, y = 24, className = "", as = "div" }) {
-  const reduce = useReducedMotion();
-  const MotionTag = motion[as] || motion.div;
-
-  if (reduce) {
-    return <div className={className}>{children}</div>;
-  }
-
-  return (
-    <MotionTag
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
-      className={className}
-    >
-      {children}
-    </MotionTag>
-  );
+// Console keeps still: content is visible on load and nothing animates in.
+// The component stays so every section keeps its wrapper and props.
+export default function Reveal({ children, className = "", as: Tag = "div" }) {
+  return <Tag className={className}>{children}</Tag>;
 }

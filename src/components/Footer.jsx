@@ -1,28 +1,43 @@
 import { Link } from "react-router-dom";
-import { ArrowUp } from "lucide-react";
 import { profile } from "@/lib/portfolioData";
 
 export default function Footer() {
+  const initials = profile.name
+    .split(" ")
+    .map((w) => w[0])
+    .join("");
+
   return (
-    <footer className="border-t border-border py-12">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-        <div className="flex items-center gap-2.5">
-          <span className="h-2 w-2 rounded-full bg-accent" />
-          <span className="font-mono text-sm tracking-widest">
-            {profile.name.split(" ").map((w) => w[0]).join("")}
-            <span className="text-muted-foreground">/DEV</span>
-          </span>
+    <footer className="footer">
+      <div className="container">
+        <div className="footer__grid">
+          <div className="footer__col">
+            <Link to="/" className="brand">
+              {initials}
+              <span>/DEV</span>
+            </Link>
+            <p className="muted">{profile.role}, {profile.company}</p>
+          </div>
+          <div className="footer__col">
+            <span className="label">Pages</span>
+            <Link to="/#work">Work</Link>
+            <Link to="/#about">About</Link>
+            <Link to="/#experience">Experience</Link>
+          </div>
+          <div className="footer__col">
+            <span className="label">Elsewhere</span>
+            <a href={profile.links.github} target="_blank" rel="noreferrer">GitHub</a>
+            <a href={profile.links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+          <div className="footer__col">
+            <span className="label">Contact</span>
+            <a href={`mailto:${profile.email}`}>{profile.email}</a>
+            <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Back to top</button>
+          </div>
         </div>
-        <p className="font-mono text-xs text-muted-foreground text-center">
+        <p className="footer__legal">
           © {new Date().getFullYear()} {profile.name}. Built with React, Tailwind & care.
         </p>
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="group inline-flex items-center gap-2 font-mono-label text-muted-foreground hover:text-foreground transition-colors"
-        >
-          Back to top
-          <ArrowUp size={14} className="group-hover:-translate-y-0.5 transition-transform" />
-        </button>
       </div>
     </footer>
   );
